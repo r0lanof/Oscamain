@@ -2,73 +2,76 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"> <!-- Уменьшение масштаба страницы -->
     <title>Oscamain</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1c5766;
-            color: #fff;
+            background-color: #0e5b83;
+            color: #0e5b83; /* Тёмно-голубой цвет текста */
         }
         header {
-            background-color: #1c5766;
-            color: white;
-            padding: 20px;
+            background-color: #0e5b83;
+            color: #00a2ff; /* Тёмно-голубой цвет текста */
+            padding: 15px; /* Уменьшение отступов */
             text-align: center;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin: 0 auto 15px; /* Центрирование и уменьшение отступа снизу */
+            max-width: 600px; /* Уменьшение максимальной ширины заголовка */
             animation: fadeIn 2s ease-out;
         }
         .header-image {
             width: 100%;
-            max-height: 300px;
+            max-height: 200px; /* Уменьшение высоты изображения */
             object-fit: cover;
             border-radius: 15%;
             animation: zoomIn 2s ease-out;
         }
         .container {
-            padding: 20px;
+            padding: 15px; /* Уменьшение отступов */
             text-align: center;
+            max-width: 600px; /* Уменьшение максимальной ширины контейнера */
+            margin: 0 auto; /* Центрирование контейнера */
         }
         h2 {
-            color: #ffffff;
+            color: #00a2ff; /* Цвет заголовков остаётся прежним */
             animation: fadeIn 2s ease-out;
         }
         .team-member {
-            background-color: #1c5766;
-            color: white;
-            margin: 10px auto;
-            padding: 20px;
+            background-color: #0e5b83;
+            color: #00a2ff; /* Тёмно-голубой цвет текста */
+            margin: 5px auto; /* Уменьшение отступа */
+            padding: 15px; /* Уменьшение отступов */
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            max-width: 600px;
+            max-width: 500px; /* Уменьшение максимальной ширины */
             animation: slideUp 1s ease-out;
         }
         .team-member img {
-            width: 50px;
-            height: 50px;
+            width: 40px; /* Уменьшение размера изображения участника */
+            height: 40px; /* Уменьшение размера изображения участника */
             border-radius: 50%;
-            margin-right: 20px;
-            border: 2px solid #ffffff;
+            margin-right: 15px; /* Уменьшение отступа */
+            border: 2px solid #00a2ff;
             transition: transform 0.3s;
         }
         .team-member img:hover {
-            transform: scale(1.1);
+            transform: scale(0.8);
         }
         .team-member h3 {
             margin-top: 0;
             margin-bottom: 5px;
-            color: #ffffff;
+            color: #00a2ff; /* Цвет заголовков остаётся прежним */
         }
         .apply-button {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #299fbd;
+            padding: 8px 15px; /* Уменьшение отступов */
+            margin-top: 15px; /* Уменьшение отступа сверху */
+            background-color: #00a2ff;
             color: #ffffff;
             text-decoration: none;
             border-radius: 20px;
@@ -76,29 +79,34 @@
         }
         .apply-button:hover {
             background-color: #2b8288;
-            color: #fff;
+            color: #00a2ff;
             transform: scale(1.1);
         }
-        .video-section {
-            margin-top: 40px;
-        }
-        .video-section h2 {
+        .rules-button {
+            display: inline-block;
+            padding: 5px 10px; /* Уменьшение отступов */
+            margin-top: 10px;
+            background-color: #00a2ff;
             color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 12px; /* Уменьшение размера текста */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .rules-button:hover {
+            background-color: #2b8288;
+            color: #00a2ff;
+            transform: scale(1.1);
+        }
+        .footer {
             text-align: center;
-            animation: fadeIn 2s ease-out;
-        }
-        .video-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .video-container video {
-            width: 320px;
-            height: 180px;
-            border-radius: 15px;
-            background-color: #333;
-            animation: zoomIn 2s ease-out;
+            padding: 5px; /* Уменьшение отступов */
+            background-color: #0e5b83;
+            color: #888;
+            position: relative;
+            bottom: 0;
+            max-width: 600px; /* Уменьшение максимальной ширины подвала */
+            margin: 0 auto; /* Центрирование подвала */
         }
 
         /* Animation Definitions */
@@ -118,20 +126,27 @@
 </head>
 <body>
     <header>
-        <img src="https://i.imgur.com/gmzSdhg.png" alt="" class="header-image">
+        <img src="https://i.imgur.com/siKQWcJ.png" alt="" class="header-image">
         <h1>Oscamain</h1>
         <p>Добро пожаловать на наш Minecraft сервер!</p>
         <a href="https://discord.gg/f2awBCFvXx" class="apply-button">Подать Заявку</a>
+        <br>
+        <a href="rules.html" class="rules-button">Правила</a> <!-- Кнопка для перехода к правилам -->
     </header>
+
     <div class="container">
         <h2>Команда разработчиков</h2>
         <div class="team-member">
             <img src="https://i.imgur.com/v0eaQyk.png" alt="r0lanoff">
             <div>
                 <h3>r0lanoff</h3>
-                <p>Владелец А Так же Главный Разроботчик</p>
+                <p>Владелец, Так же Главный Разроботчик</p>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Oscamain. Все права защищены.</p>
+    </footer>
 </body>
 </html>
