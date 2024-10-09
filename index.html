@@ -2,121 +2,97 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7"> <!-- Уменьшение масштаба страницы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscamain</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0e5b83;
-            color: #0e5b83; /* Тёмно-голубой цвет текста */
+            background-color: #121212; /* Темный фон */
+            color: #ffffff; /* Светлый цвет текста */
         }
         header {
-            background-color: #0e5b83;
-            color: #00a2ff; /* Тёмно-голубой цвет текста */
-            padding: 15px; /* Уменьшение отступов */
+            background-color: #1e1e1e; /* Темный фон заголовка */
+            color: #ffffff;
+            padding: 20px;
             text-align: center;
             border-radius: 20px;
-            margin: 0 auto 15px; /* Центрирование и уменьшение отступа снизу */
-            max-width: 600px; /* Уменьшение максимальной ширины заголовка */
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             animation: fadeIn 2s ease-out;
         }
         .header-image {
             width: 100%;
-            max-height: 200px; /* Уменьшение высоты изображения */
+            max-height: 200px;
             object-fit: cover;
             border-radius: 15%;
-            animation: zoomIn 2s ease-out;
         }
         .container {
-            padding: 15px; /* Уменьшение отступов */
+            padding: 20px;
             text-align: center;
-            max-width: 600px; /* Уменьшение максимальной ширины контейнера */
-            margin: 0 auto; /* Центрирование контейнера */
+            max-width: 600px;
+            margin: 0 auto;
         }
         h2 {
-            color: #00a2ff; /* Цвет заголовков остаётся прежним */
+            color: #00a2ff; /* Яркий цвет заголовка */
+            margin-bottom: 20px;
             animation: fadeIn 2s ease-out;
         }
         .team-member {
-            background-color: #0e5b83;
-            color: #00a2ff; /* Тёмно-голубой цвет текста */
-            margin: 5px auto; /* Уменьшение отступа */
-            padding: 15px; /* Уменьшение отступов */
+            background-color: #1e1e1e; /* Темный фон для участников команды */
+            color: #ffffff;
+            margin: 10px auto;
+            padding: 15px;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
-            max-width: 500px; /* Уменьшение максимальной ширины */
+            max-width: 500px;
+            transition: transform 0.3s;
             animation: slideUp 1s ease-out;
         }
+        .team-member:hover {
+            transform: scale(1.02);
+        }
         .team-member img {
-            width: 40px; /* Уменьшение размера изображения участника */
-            height: 40px; /* Уменьшение размера изображения участника */
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            margin-right: 15px; /* Уменьшение отступа */
-            border: 2px solid #00a2ff;
-            transition: transform 0.3s;
+            margin-right: 15px;
+            border: 2px solid #00a2ff; /* Яркая рамка для изображений */
         }
-        .team-member img:hover {
-            transform: scale(0.8);
-        }
-        .team-member h3 {
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: #00a2ff; /* Цвет заголовков остаётся прежним */
-        }
-        .apply-button {
+        .apply-button, .rules-button {
             display: inline-block;
-            padding: 8px 15px; /* Уменьшение отступов */
-            margin-top: 15px; /* Уменьшение отступа сверху */
-            background-color: #00a2ff;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #00a2ff; /* Яркий цвет кнопок */
             color: #ffffff;
             text-decoration: none;
             border-radius: 20px;
             transition: background-color 0.3s, transform 0.3s;
         }
-        .apply-button:hover {
-            background-color: #2b8288;
-            color: #00a2ff;
-            transform: scale(1.1);
-        }
-        .rules-button {
-            display: inline-block;
-            padding: 5px 10px; /* Уменьшение отступов */
-            margin-top: 10px;
-            background-color: #00a2ff;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 12px; /* Уменьшение размера текста */
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .rules-button:hover {
-            background-color: #2b8288;
-            color: #00a2ff;
-            transform: scale(1.1);
+        .apply-button:hover, .rules-button:hover {
+            background-color: #2b8288; /* Цвет кнопок при наведении */
+            transform: scale(1.05);
         }
         .footer {
             text-align: center;
-            padding: 5px; /* Уменьшение отступов */
-            background-color: #0e5b83;
+            padding: 10px;
+            background-color: #1e1e1e; /* Темный фон подвала */
             color: #888;
             position: relative;
+            border-radius: 20px;
             bottom: 0;
-            max-width: 600px; /* Уменьшение максимальной ширины подвала */
-            margin: 0 auto; /* Центрирование подвала */
+            max-width: 600px;
+            margin: 20px auto;
         }
 
         /* Animation Definitions */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
         }
         @keyframes slideUp {
             from { transform: translateY(20px); opacity: 0; }
@@ -131,7 +107,7 @@
         <p>Добро пожаловать на наш Minecraft сервер!</p>
         <a href="https://discord.gg/f2awBCFvXx" class="apply-button">Подать Заявку</a>
         <br>
-        <a href="rules.html" class="rules-button">Правила</a> <!-- Кнопка для перехода к правилам -->
+        <a href="rules.html" class="rules-button">Правила</a>
     </header>
 
     <div class="container">
@@ -139,8 +115,8 @@
         <div class="team-member">
             <img src="https://i.imgur.com/v0eaQyk.png" alt="r0lanoff">
             <div>
-                <h3>r0lanoff</h3>
-                <p>Владелец, Так же Главный Разработчик</p>
+                <h3>r0lanoff -</
+                <p> Владелец, Так же Главный Разработчик</p>
             </div>
         </div>
     </div>
